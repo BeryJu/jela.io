@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jela-io-ingress
+  namespace: prod-jela-io
+  labels:
+    app.kubernetes.io/name: jela.io
+    app.kubernetes.io/managed-by: jela.io
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    ingress.kubernetes.io/proxy-body-size: 5000m
+    nginx.ingress.kubernetes.io/proxy-body-size: 5000m
+    kubernetes.io/tls-acme: "true"
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+spec:
+  tls:
+    - hosts:
+        - jela.io
+      secretName: jela-io-acme
+  rules:
+    - host: jela.io
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: jela-io-http
+              servicePort: http
