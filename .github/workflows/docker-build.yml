@@ -19,3 +19,4 @@ jobs:
         with:
           tags: beryju.org/jens/jela.io:latest
           context: .
+          push: true
