@@ -1,7 +1,8 @@
 [[redirects]]
-  from = "/*"
+  from = "https://dj.jela.io"
   to = "https://soundcloud.com/beryju"
-  conditions = {Host = ["dj.jela.io"]}
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/v2"
