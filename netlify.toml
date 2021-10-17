@@ -1,0 +1,15 @@
+[[redirects]]
+  from = "https://dj.jela.io"
+  to = "https://soundcloud.com/beryju"
+
+[[redirects]]
+  from = "/v2"
+  to = "https://beryjuorg.netlify.app/.netlify/functions/oci-proxy"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/v2/*"
+  to = "https://ghcr.io/v2/beryju/:splat"
+  status = 200
+  force = true
